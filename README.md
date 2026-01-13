@@ -65,6 +65,49 @@ in the same project.
 Only hydrate the component that needs interactivity.
 
 ### Astro Architecture Diagram
+![Astro Architecture Diagram](https://github.com/piyalidas10/Astro-UI/blob/47baec1edb38301f3df5fbe85887b0478e995173/images/astro.png)
+Astro renders most of the page as static HTML and hydrates only small interactive components (islands), resulting in faster performance and minimal JavaScript shipped to the browser.
+#### 🔼 Top Section – What Astro Produces
+**1️⃣ Static HTML**
+  -  Most of the page is just HTML + CSS
+  -  No JavaScript is shipped for normal content (text, images, layout)
+➡️ Faster load, better SEO  
+**2️⃣ Optimized Assets**
+  -  Images, fonts, and static files are:
+      -  Pre-optimized
+      -  Lazy-loaded
+      -  CDN-friendly
+➡️ Smaller payload, faster rendering  
+**3️⃣ Islands of Interactivity**
+  -  Only specific UI parts are interactive:
+      -  Search bar
+      -  Cart widget
+      -  Carousel
+These are called Islands 
+Each island:
+  -  Loads its own JS
+  -  Is independent of the rest of the page
+➡️ No full-page hydration
+
+#### 🔽 Middle – Astro Engine
+**🚀 ASTRO (Zero JS by Default)**  
+Astro:
+  -  Combines static HTML
+  -  Adds islands only where needed
+  -  Supports SSR + SSG hybrid
+This means:
+  -  Pages can be prebuilt (SSG)
+  -  Or rendered on-demand (SSR)
+
+#### 🔽 Bottom – What the Browser Receives
+**🖥️ Client Browser**  
+Receives:
+  -  Static HTML content immediately
+  -  Minimal JavaScript only for islands
+Result:
+  -  ⚡ Fast load times
+  -  📉 Minimal JS execution
+  -  🧠 Less memory & CPU usage
 
 ### 🔥 Example: Component Island in Astro
 ```
