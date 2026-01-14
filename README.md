@@ -261,3 +261,100 @@ npm run preview   # verify production output
 **One-line rule to remember 🧠**
 > dev = coding
 > preview = production check
+
+### Why preview matters for SEO
+>👉 SEO cares about what’s in npm run preview, not npm run dev.
+Search engines index final HTML, not your dev server behavior.
+
+**What search engines actually see**  
+When Google (or any crawler) visits your site, it gets:
+```
+<html>
+  <head>
+    <title>...</title>
+    <meta name="description" content="..." />
+    <h1>...</h1>
+  </head>
+</html>
+```
+That HTML must already be complete at request time.
+------------------------------------------------------------------
+**Why npm run dev is misleading for SEO**  
+npm run dev:
+  -  Generates pages on demand
+  -  Injects dev-only scripts
+  -  Uses unoptimized assets
+  -  Can hide real problems
+
+**Example problems that dev hides**  
+❌ Missing meta tags
+```
+<meta name="description" content={description} />
+```
+If description is undefined:
+  -  dev → page still loads
+  -  preview → meta tag missing → SEO hit
+❌ Broken internal links
+Dev server:
+  -  Auto-resolves some paths
+  -  Can mask wrong URLs
+Preview:
+  -  Uses real /dist structure
+  -  Broken links = broken SEO
+❌ Wrong canonical URLs
+```
+<link rel="canonical" href="http://localhost:4321/about" />
+```
+Preview exposes:
+  -  Hardcoded localhost URLs
+  -  Wrong base paths
+------------------------------------------------------------------
+**Why npm run preview matters for SEO**
+
+npm run preview:
+  -  Serves exact build output
+  -  Uses real:
+      -  HTML
+      -  Meta tags
+      -  Structured data
+      -  Assets
+  -  Matches production behavior
+👉 What you see in preview = what Google sees.
+------------------------------------------------------------------
+**Key SEO checks you should do in preview**  
+**1️⃣ View page source (not DevTools Elements)**  
+Right click → View Page Source  
+Check:
+  -  <title>
+  -  <meta description>
+  -  <h1> present
+  -  Canonical URL
+
+**2️⃣ Check clean URLs**
+```
+/about
+/contact
+/blog/post-1
+```
+No:
+  -  .html
+  -  Query strings
+  -  Hash routing
+
+**3️⃣ Check sitemap**  
+If you add a sitemap later:
+``
+/sitemap.xml
+``
+Preview ensures:
+  -  Correct URLs
+  -  No localhost links
+
+**4️⃣ Lighthouse / PageSpeed**  
+Run Lighthouse on preview, not dev.  
+Dev mode:
+  -  Injects scripts
+  -  Fails performance metrics
+Preview:
+  -  Real scores
+  -  Real SEO audit
