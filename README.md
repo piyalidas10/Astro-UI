@@ -170,6 +170,12 @@ code .   // open in VS code
 ![Astro Project Setup](https://github.com/piyalidas10/Astro-UI/blob/f317ba5b95e8b606b5b81732d4e7d0e1be1d1c28/images/astro_project_setup.png)
 
 ### Run Astro Project
+```
+npm run dev       # develop
+npm run build     # generate static files
+npm run preview   # verify production output
+```
+
 **After this finishes, you can run:**
 ```
 npm run dev
@@ -247,6 +253,11 @@ http://localhost:4321
 | SEO accuracy   | ❌ Not accurate | ✅ Accurate         |
 | Use case       | Development     | Pre-deploy testing   |
 
-
-
-
+```
+npm run dev       # develop
+npm run build     # generate static files
+npm run preview   # verify production output
+```
+**One-line rule to remember 🧠**
+> dev = coding
+> preview = production check
