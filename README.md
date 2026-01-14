@@ -174,6 +174,7 @@ Then open:
 http://localhost:4321
 ```
 ![Astro Run](https://github.com/piyalidas10/Astro-UI/blob/ff81ce69cf813b6dd4192818de66c4bd0ae8f473/images/astro_install_finish.png)
+![Astro Run Browser](https://github.com/piyalidas10/Astro-UI/blob/2ccdfd840979c5a7a6beb50fd845ea267a6bffde/images/astro_run_browser.png)
 
 npm run build → generates /dist
 
