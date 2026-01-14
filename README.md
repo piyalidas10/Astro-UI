@@ -163,10 +163,15 @@ Why:
 - YES if track changes and Easy to push to GitHub / GitLab / Bitbucket
 
 ![Astro Install Finish](https://github.com/piyalidas10/Astro-UI/blob/e2e5246f9a5d22cb75477e0cdeb277935f286819/images/astro_install_finish.png)
-
-**After this finishes, you can run:**
 ```
 cd y     // y is project folder's name
+code .   // open in VS code
+```
+![Astro Project Setup](https://github.com/piyalidas10/Astro-UI/blob/f317ba5b95e8b606b5b81732d4e7d0e1be1d1c28/images/astro_project_setup.png)
+
+### Run Astro Project
+**After this finishes, you can run:**
+```
 npm run dev
 ```
 Then open:
@@ -177,5 +182,71 @@ http://localhost:4321
 ![Astro Run Browser](https://github.com/piyalidas10/Astro-UI/blob/2ccdfd840979c5a7a6beb50fd845ea267a6bffde/images/astro_run_browser.png)
 
 npm run build → generates /dist
+```
+npm run build  # static output in /dist
+npm run preview
+```
+![Astro Run Browser Preview](https://github.com/piyalidas10/Astro-UI/blob/644dda379e3bba91b8e324787669ed1abc27b2ab/images/astro_run_browser_preview.png)
+
+### npm run preview vs npm run dev
+#### 🧑‍💻 Development mode
+```
+npm run dev
+```
+**What it does**
+  -  Starts Astro’s development server
+  -  Uses Vite dev server
+  -  Hot Module Reload (HMR)
+  -  Fast rebuilds
+  -  Not optimized
+
+**Key characteristics**
+  -  ❌ Not production-like
+  -  ❌ HTML is generated on the fly
+  -  ✅ Best for coding & debugging
+
+**Typical use**
+  -  While building pages
+  -  Editing components/layouts/styles
+  -  Local development
+
+**URL**
+```
+http://localhost:4321
+```
+
+#### 🔍 Production preview mode
+```
+npm run build
+npm run preview
+```
+**What it does**
+  -  Serves files from the dist/ folder
+  -  Uses the actual production output
+  -  No HMR
+  -  Optimized HTML, CSS, JS
+**Key characteristics**
+  -  ✅ Exactly how your site will behave in production
+  -  ✅ Static HTML served
+  -  ❌ Slower to change (requires rebuild)
+**Typical use**
+  -  Final testing
+  -  SEO verification
+  -  Checking routing, assets, 404s
+  -  Before deployment
+**URL**
+```
+http://localhost:4321
+```
+| Feature        | `npm run dev`   | `npm run preview`    |
+| -------------- | ----------------| ---------------------|
+| Build required | ❌ No           | ✅ Yes              |
+| Hot reload     | ✅ Yes          | ❌ No               |
+| Performance    | Fast rebuilds   | Real production      |
+| Uses `dist/`   | ❌ No           | ✅ Yes              |
+| SEO accuracy   | ❌ Not accurate | ✅ Accurate         |
+| Use case       | Development     | Pre-deploy testing   |
+
+
 
 
