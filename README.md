@@ -122,4 +122,57 @@ import Counter from '../components/Counter.jsx'
 <Counter client:load />
 ```
 
+### Astro Project Creation
+![Astro Install](https://github.com/piyalidas10/Astro-UI/blob/2c296a1c03298e70ca43192a181b0f76f5b29619/images/astro_install.png)
+
+**✅ A basic, helpful starter project (recommended)**  
+Choose this if:
+  -  You’re new to Astro
+  -  You want a general website / app
+  -  You plan to add integrations later (React, Vue, Angular, MDX, etc.)
+  -  You want sensible defaults without being locked into a blog/docs structure
+👉 This is the safest and best default choice
+
+**📝 Use blog template** 
+  -  You’re building a content-first blog
+  -  You want markdown posts, tags, RSS, etc. out of the box
+
+**📚 Use docs (Starlight) template**
+  -  You’re building documentation
+  -  You want sidebar navigation, versioning, search
+  -  Great for libraries, frameworks, internal docs
+
+**🪶 Use minimal (empty) template**
+  -  You want full control
+  -  You already know Astro well
+  -  You’re integrating Astro into an existing system or micro-frontend setup
+
+> If you’re unsure → pick 👉 A basic, helpful starter project
+> You can always remove or add features later.
+
+![Astro Install Dependencies](https://github.com/piyalidas10/Astro-UI/blob/28e0583bd32016b51dd9344e3689ef0e1692c44c/images/astro_install_dependencies.png)
+**✅ Yes — Install dependencies (Recommended)**   
+Why:
+  -  Installs everything Astro needs to run immediately
+  -  Lets you start the dev server right away
+  -  Avoids manual npm install later
+  -  No downside for a static site
+
+**Initialize a new git repository**
+- No if You’re inside an existing git repo
+- YES if track changes and Easy to push to GitHub / GitLab / Bitbucket
+
+![Astro Install Finish](https://github.com/piyalidas10/Astro-UI/blob/e2e5246f9a5d22cb75477e0cdeb277935f286819/images/astro_install_finish.png)
+
+**After this finishes, you can run:**
+```
+cd <<project name>>
+npm run dev
+```
+Then open:
+```
+http://localhost:4321
+```
+npm run build → generates /dist
+
 
