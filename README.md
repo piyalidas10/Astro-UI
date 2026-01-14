@@ -166,7 +166,7 @@ Why:
 
 **After this finishes, you can run:**
 ```
-cd <<project name>>
+cd y     // y is project folder's name
 npm run dev
 ```
 Then open:
