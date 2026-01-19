@@ -1,0 +1,51 @@
+---
+import MainLayout from "../layouts/MainLayout.astro";
+
+// Load all blog posts (Markdown)
+const posts = Object.values(
+  import.meta.glob('./blog/*.md', { eager: true })
+)
+  // sort by date (newest first)
+  .sort(
+    (a, b) => new Date(b.frontmatter.date) - new Date(a.frontmatter.date)
+  )
+  // show only latest 5
+  .slice(0, 5);
+---
+<MainLayout title="Home">
+  <h1>Welcome to My Static Astro Site 🚀</h1>
+
+  <p>This site is built with Astro and Markdown.</p>
+
+  <section>
+    <h2>Latest Blog Posts</h2>
+
+    <ul>
+      {posts.map(post => (
+        <li>
+          <a href={post.url}>
+            {post.frontmatter.title}
+          </a>
+          <br />
+          <small>
+            {post.frontmatter.date}
+            {post.frontmatter.tags && (
+              <>
+                {" · "}
+                {post.frontmatter.tags.map(tag => (
+                  <a href={`/tags/${tag}`} style="margin-right: 0.5rem;">
+                    #{tag}
+                  </a>
+                ))}
+              </>
+            )}
+          </small>
+        </li>
+      ))}
+    </ul>
+
+    <p>
+      <a href="/blog">View all posts →</a>
+    </p>
+  </section>
+</MainLayout>
